@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -26,6 +27,8 @@ func main() {
 	})
 
 	router.GET("/health", func(ctx *gin.Context) {
+
+		time.Sleep(time.Second)
 		ctx.JSON(http.StatusOK, gin.H{
 			"msg": "Everything looks good here :)",
 		})
