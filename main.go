@@ -28,7 +28,7 @@ func main() {
 
 	router.GET("/health", func(ctx *gin.Context) {
 
-		time.Sleep(time.Second)
+		time.Sleep(time.Second * 3)
 		ctx.JSON(http.StatusOK, gin.H{
 			"msg": "Everything looks good here :)",
 		})
