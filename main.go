@@ -20,6 +20,7 @@ func main() {
 
 	router.GET("/data", func(ctx *gin.Context) {
 		ip := ctx.RemoteIP()
+		time.Sleep(time.Second * 2)
 		ctx.JSON(http.StatusOK, gin.H{
 			"status": 200,
 			"msg":    "Your Public IP is: " + ip,
@@ -28,7 +29,6 @@ func main() {
 
 	router.GET("/health", func(ctx *gin.Context) {
 
-		time.Sleep(time.Second * 3)
 		ctx.JSON(http.StatusOK, gin.H{
 			"msg": "Everything looks good here :)",
 		})
